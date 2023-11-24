@@ -10,18 +10,10 @@ export default function MainPage() {
   return (
     <>
       <NextSeo description="Home page description of the page" />
-      <div className="flex flex-col items-center pt-36 bg-storePattern">
+      <div className="flex flex-col items-center bg-storePattern">
         <Header state={0} />
+        <div className="bg-black w-full h-[500px]"></div>
         <div className="sm:container p-5 space-y-2 sm:space-y-5">
-          <Banner
-            images={[
-              [
-                { src: "store/1.jpg", url: "/lists/51" },
-                { src: "store/4.jpg", url: "/lists/61" },
-                { src: "store/5.png", url: "/lists/11" },
-              ],
-            ]}
-          />
           <ProductLists
             products={products.filter(
               (product) =>
