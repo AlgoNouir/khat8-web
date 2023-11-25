@@ -9,9 +9,24 @@ export default function Product(props: productType) {
   return (
     <button
       onClick={() => router.push(`/product/${props.id}`)}
-      className="bg-bg-200 rounded-xl p-5 flex flex-col justify-between h-full border-4 border-primary-500 w-full"
+      className="bg-bg-200 rounded-xl p-5 flex flex-col relative justify-between h-full border-4  w-full space-y-5"
       dir="rtl"
     >
+      {props.offerPrice > 0 && (
+        <div className="flex flex-row items-center justify-between absolute left-5 -rotate-12">
+          <div className="text-red-600 flex flex-col items-center space-x-1 rtl:space-x-reverse">
+            <p className="text-lg">
+              {Intl.NumberFormat("fa-IR").format(
+                Math.round(
+                  (-1000 * (props.offerPrice - props.price)) / props.price
+                ) / 10
+              )}{" "}
+              ٪
+            </p>
+            <small>تخفیف !</small>
+          </div>
+        </div>
+      )}
       <div className="flex flex-col space-y-5">
         <div className="flex items-center justify-center">
           <CustomImage name={props.image[0]} />
@@ -19,27 +34,7 @@ export default function Product(props: productType) {
         <p className="text-center text-gray-600">{props.persianName}</p>
       </div>
       <div className="flex flex-col justify-end">
-        {props.offerPrice > 0 && (
-          <del className="flex text-red-600 flex-row items-center space-x-2 rtl:space-x-reverse justify-end">
-            {Intl.NumberFormat("fa-IR").format(props.price)}
-          </del>
-        )}
         <div className="flex flex-row items-center justify-between">
-          {props.offerPrice > 0 && (
-            <div className="flex flex-row items-center justify-between">
-              <div className="text-green-700 flex flex-row items-center space-x-1 rtl:space-x-reverse">
-                <BiSolidOffer className="text-2xl" />
-                <p className="text-lg">
-                  {Intl.NumberFormat("fa-IR").format(
-                    Math.round(
-                      (-1000 * (props.offerPrice - props.price)) / props.price
-                    ) / 10
-                  )}
-                </p>
-              </div>
-              {/* <small>تخفیف</small> */}
-            </div>
-          )}
           <div className="flex flex-row grow items-center space-x-2 rtl:space-x-reverse justify-end">
             <p
               className={`text-xl font-bold ${

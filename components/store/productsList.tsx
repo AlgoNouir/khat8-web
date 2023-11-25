@@ -45,8 +45,14 @@ export default function ProductLists(props: {
         {props.title === undefined ? (
           <></>
         ) : (
-          <div className="flex flex-row justify-between items-center mb-5">
-            <label className="text-lg sm:text-3xl font-bold">
+          <div
+            style={{
+              paddingTop: props.title.moreDir === undefined ? 8 : 0,
+              paddingBottom: props.title.moreDir === undefined ? 8 : 0,
+            }}
+            className="flex flex-row justify-between items-center mb-5 bg-white ps-5 rounded-full"
+          >
+            <label className="text-lg sm:text-xl font-bold">
               {props.title.name}
             </label>
             {props.title.moreDir === undefined ? (
@@ -54,7 +60,7 @@ export default function ProductLists(props: {
             ) : (
               <button
                 onClick={() => router.push(props.title?.moreDir || "")}
-                className="px-5 py-2 text-black bg-slate-300 rounded-full text-lg sm:text-xl text-sm sm:w-44 font-bold"
+                className="px-5 py-2 text-white bg-black rounded-full sm:text-lg text-sm sm:w-44 font-bold"
               >
                 مشاهده بیشتر
               </button>

@@ -33,20 +33,6 @@ function ProductDetail(props: { name: string; amount: string }) {
   );
 }
 
-function Offer(props: { amount: number }) {
-  return (
-    <div
-      className="rotate-12 bg-red-700 w-24 h-24 rounded-full 
-            flex items-center justify-center flex-col"
-    >
-      <p className="text-4xl text-white">{`${Intl.NumberFormat("fa-IR").format(
-        props.amount
-      )}%`}</p>
-      <small className="text-white">تخفیف !</small>
-    </div>
-  );
-}
-
 export default function ProductPage(props: any) {
   // redux
   const account = useAppSelector((store) => store.account);
@@ -84,16 +70,8 @@ export default function ProductPage(props: any) {
 
   return (
     <>
-      <NextSeo
-        additionalMetaTags={[
-          {
-            name: "test",
-            content: "hello",
-          },
-        ]}
-      />
       {product !== undefined ? (
-        <div className="flex flex-col items-center w-full bg-storePattern">
+        <div className="flex flex-col items-center w-full bg-gray-100 max-lg:px-0 px-36">
           <Header state={0} />
           <div className="space-y-5 p-5 sm:container pt-40">
             {product.category === 61 || product.category === 56 ? (
@@ -115,43 +93,12 @@ export default function ProductPage(props: any) {
               </div>
               <div
                 className="xl:w-1/2 p-10 flex
-                            items-center justify-between flex-col space-y-7 relative"
+                relative  items-center justify-between flex-col space-y-7"
               >
                 <div className="flex flex-col space-y-5 w-full">
-                  <label className="text-right space-x-5 rtl:space-x-reverse">
-                    <label className="text-xl font-bold">
-                      {product.persianName}
-                    </label>
-
-                    {product.original ? (
-                      <></>
-                    ) : (
-                      <small className="m-2 text-white bg-slate-300 p-1 rounded-xl absolute top-3 left-3">
-                        غیر اصل
-                      </small>
-                    )}
-                  </label>
                   <label className="text-gray-500 font-bold">
                     {product.garanty}
                   </label>
-                  <div>
-                    <label>رنگ : </label>
-                    {tmp_product.length > 0 ? (
-                      tmp_product.map((p, index) => (
-                        <button
-                          key={`button-${index}`}
-                          onClick={() => selectHandler(p)}
-                          className={`${
-                            select?.id === p.id ? "border-4" : ""
-                          } px-5 py-1 rounded-xl bg-gray-300 border-primary-500`}
-                        >
-                          <p className="text-xl">{p.name}</p>
-                        </button>
-                      ))
-                    ) : (
-                      <></>
-                    )}
-                  </div>
                   <div className="flex flex-row text-prime-200/50 space-x-2 rtl:space-x-reverse items-center">
                     <HiBuildingStorefront className="text-xl" />
                     <label>ارسال از انبار کارنسینو</label>
@@ -163,7 +110,7 @@ export default function ProductPage(props: any) {
                 </div>
                 <div
                   className="w-full flex flex-col space-y-5 sm:space-y-0 sm:flex-row space-x-5 
-                                items-center justify-center sm:justify-between"
+                  items-center justify-center sm:justify-between "
                 >
                   {select === undefined ? (
                     <div className="flex items-center justify-center w-full h-20">
@@ -173,17 +120,25 @@ export default function ProductPage(props: any) {
                     </div>
                   ) : (
                     <>
-                      <div className="flex flex-row w-full justify-center items-center space-x-5 rtl:space-x-reverse">
-                        {product.offerPrice > 0 ? (
-                          <Offer
-                            amount={Math.round(
+                      {product.offerPrice > 0 ? (
+                        <div
+                          className="-rotate-12 text-red-700 w-24 h-24 rounded-full 
+                        absolute flex items-center justify-center flex-col top-5 left-5"
+                        >
+                          <p className="text-4xl">{`${Intl.NumberFormat(
+                            "fa-IR"
+                          ).format(
+                            Math.round(
                               (-100 * (product.offerPrice - product.price)) /
                                 product.price
-                            )}
-                          />
-                        ) : (
-                          <></>
-                        )}
+                            )
+                          )}%`}</p>
+                          <small className="">تخفیف !</small>
+                        </div>
+                      ) : (
+                        <></>
+                      )}
+                      <div className="flex flex-row w-full justify-center sm:justify-start items-center space-x-5 rtl:space-x-reverse">
                         <div>
                           {product.offerPrice > 0 ? (
                             <del className="text-xl text-red-700">
@@ -315,9 +270,9 @@ export default function ProductPage(props: any) {
                               inCart.count !== count)
                               ? "bg-green-700"
                               : "bg-accent-200"
-                          } p-5 w-72 rounded-xl`}
+                          } p-3 w-40 rounded-xl`}
                         >
-                          <p className="text-xl font-bold text-white">
+                          <p className=" font-bold text-white">
                             {inCart === undefined ||
                             (count === 0 &&
                               inCart !== undefined &&
@@ -354,12 +309,18 @@ export default function ProductPage(props: any) {
               </div>
             )}
             {products !== undefined && products?.length > 0 ? (
-              <div className="bg-white p-5 shadow-xl rounded-xl">
-                <ProductLists
-                  products={products}
-                  title={{ name: "محصولات مشابه" }}
-                />
-              </div>
+              <ProductLists
+                products={products}
+                title={{ name: "کتاب های مشابه" }}
+              />
+            ) : (
+              <></>
+            )}
+            {products !== undefined && products?.length > 0 ? (
+              <ProductLists
+                products={products}
+                title={{ name: "از همین نویسنده" }}
+              />
             ) : (
               <></>
             )}

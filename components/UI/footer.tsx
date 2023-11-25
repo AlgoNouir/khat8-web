@@ -28,7 +28,7 @@ function Icon(props: { text: string; icon: any; url?: string }) {
 export default function Footer() {
   return (
     <div
-      className="bg-bg-300 rounded-t-xl w-screen flex overflow-hidden
+      className="bg-gray-600 text-white rounded-t-xl w-screen flex overflow-hidden
             items-center justify-end flex-col p-5 pt-16 space-y-5"
     >
       <div className="flex flex-col lg:flex-row w-full items-center justify-between lg:px-10 max-lg:space-y-5 lg:space-x-5 rtl:space-x-reverse">
@@ -83,7 +83,10 @@ export default function Footer() {
               text="currencyno_plus"
               url="https://instagram.com/currencyno_plus"
               icon={
-                <Image src={require("@/public/instaLogo.png")} alt="اینستاگرام" />
+                <Image
+                  src={require("@/public/instaLogo.png")}
+                  alt="اینستاگرام"
+                />
               }
             />
           </div>
@@ -126,7 +129,7 @@ export default function Footer() {
       </div>
       <div className="flex lg:flex-row flex-col items-center justify-center max-lg:space-y-2 lg:space-x-2 rtl:space-x-reverse">
         <p className="text-center">
-          تمام حقوق این وبسایت متعلق به شرکت تحلیلگران نگرش نو تجارت است. ۱۴۰۳
+          تمام حقوق این وبسایت متعلق به انتشارات خط ۸ است. ۱۴۰۳
         </p>
       </div>
     </div>
