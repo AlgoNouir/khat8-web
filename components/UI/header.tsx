@@ -16,8 +16,8 @@ export default function Header(props: { state: number }) {
         {[
           { name: "خانه", dir: "/" },
           { name: "لیست محصولات", dir: "/lists/all/" },
-          { name: "ثبت کتاب", dir: "" },
-          { name: "درباره ما", dir: "" },
+          { name: "ثبت کتاب", dir: "/book" },
+          { name: "درباره ما", dir: "/info" },
         ].map((item, index) => (
           <button
             key={index}
@@ -43,7 +43,10 @@ export default function Header(props: { state: number }) {
             />
           </div>
         </button>
-        <button className="bg-white font-bold text-xl rounded-full p-1">
+        <button
+          onClick={() => router.push("/profile")}
+          className="bg-white font-bold text-xl rounded-full p-1"
+        >
           <MdPerson />
         </button>
       </div>

@@ -81,7 +81,7 @@ export default function ProductLists(props: {
                 "
                 key={index}
               >
-                <Product {...product} />
+                <Product data={product} />
               </div>
             ))}
           </Carousel>

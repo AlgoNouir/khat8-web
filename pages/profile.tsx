@@ -71,7 +71,7 @@ export default function ProfilePage() {
   const dispatch = useAppDispatch();
   const router = useRouter();
   return (
-    <div className="relative pt-32 flex flex-col space-y-10">
+    <div className="relative pt-7 flex flex-col space-y-10">
       <div className="absolute top-0">
         <Header state={0} />
       </div>
@@ -86,7 +86,7 @@ export default function ProfilePage() {
               disabled={s.id === screen.id}
               onClick={() => screenHandler(s)}
               style={{
-                backgroundColor: s.id === screen.id ? "#4771AF" : "",
+                backgroundColor: s.id === screen.id ? "#000" : "",
                 color: s.id === screen.id ? "#FFFFFF" : "#000000",
               }}
               className="w-5/6 p-5 rounded-r-full font-bold flex flex-row 
@@ -186,13 +186,13 @@ export function ProductScreen() {
                       );
                     }
                   }}
-                  className="absolute text-red-700 bg-red-500/50 text-2xl p-2 rounded-full z-10 left-3 top-3"
+                  className="absolute text-red-700 text-2xl p-2 rounded-full z-10 right-3 top-3"
                 >
                   <MdDelete />
                 </button>
                 <button
                   onClick={() => router.push(`product/${product.id}`)}
-                  className="relative bg-prime-300 rounded-xl h-fit"
+                  className="relative bg-black rounded-xl h-fit"
                 >
                   <div className="absolute top-3 right-3">
                     {select !== undefined ? (
@@ -203,19 +203,11 @@ export function ProductScreen() {
                       <></>
                     )}
                   </div>
-                  <div className="h-96">
-                    <Product {...product} />
+                  <div className="">
+                    <Product hidePrice data={product} />
                   </div>
-                  <div className="bg-white z-0 rounded-xl p-2 border-4 border-primary-500 space-y-2">
-                    <div className="flex flex-row items-center justify-start font-bold space-x-2 rtl:space-x-reverse text-primary-700">
-                      <BiCheckShield className="text-xl" />
-                      <label className="text-sm">{product.garanty}</label>
-                    </div>
-                    <div className="flex flex-row text-primary-700 font-bold space-x-2 rtl:space-x-reverse items-center">
-                      <HiBuildingStorefront className="text-xl" />
-                      <label className="text-sm">ارسال از انبار کارنسینو</label>
-                    </div>
-                    <div className="flex flex-row items-end justify-between ">
+                  <div className="z-0 rounded-xl p-2 border-4 border-black bg-black space-y-2">
+                    <div className="flex flex-row items-end justify-between text-white">
                       <label>
                         {`${Intl.NumberFormat("fa-IR").format(p.count)} عدد`}
                       </label>
@@ -390,6 +382,7 @@ export function ProductScreen() {
     </div>
   );
 }
+
 function Input(props: {
   title: string;
   handler: Dispatch<SetStateAction<string>>;

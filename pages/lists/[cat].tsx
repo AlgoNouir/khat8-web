@@ -58,7 +58,7 @@ export default function ListsPage() {
             .filter((item) => !(filter !== -1 && item.category !== filter))
             .map((item, index) => (
               <div key={index} className="max-h-[450px]">
-                <Product {...item} />
+                <Product data={item} />
               </div>
             ))}
         </div>

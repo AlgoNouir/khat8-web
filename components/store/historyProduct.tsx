@@ -46,7 +46,7 @@ export default function HistoryModal(props: {
                   )}
                 </div>
                 <div className="h-96">
-                  <Product {...product} />
+                  <Product data={product} />
                 </div>
                 <div className="bg-white z-0 rounded-xl p-2 border-4 border-primary-500 space-y-2">
                   <div className="flex flex-row items-center justify-start font-bold space-x-2 rtl:space-x-reverse text-primary-700">

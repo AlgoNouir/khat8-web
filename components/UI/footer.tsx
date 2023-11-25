@@ -13,12 +13,12 @@ function Icon(props: { text: string; icon: any; url?: string }) {
           ? () => {}
           : () => window.open(props.url, "_blank")
       }
-      className="flex flex-row space-x-5 rtl:space-x-reverse items-center"
+      className="flex flex-row space-x-2 rtl:space-x-reverse items-center"
     >
-      <div className="lg:w-16 w-9 lg:h-16 h-9 items-center justify-center flex text-3xl">
+      <div className="w-10 h-10 items-center justify-center flex">
         {props.icon}
       </div>
-      <label className="text-xs sm:text-sm xl:text-xl font-bold">
+      <label className="text-xs sm:text-sm xl:text-sm font-bold">
         {props.text}
       </label>
     </button>
@@ -31,25 +31,20 @@ export default function Footer() {
       className="bg-gray-600 text-white rounded-t-xl w-screen flex overflow-hidden
             items-center justify-end flex-col p-5 pt-16 space-y-5"
     >
-      <div className="flex flex-col lg:flex-row w-full items-center justify-between lg:px-10 max-lg:space-y-5 lg:space-x-5 rtl:space-x-reverse">
+      <div className="flex flex-col lg:flex-row w-screen items-center justify-evenly lg:px-10 max-lg:space-y-5 lg:space-x-5 rtl:space-x-reverse">
         <div className="lg:w-1/3 w-full space-y-5 flex flex-col">
-          <p className="text-xs sm:text-sm xl:text-xl text-justify">
-            مجموعه کارنسینو با بیش از یک دهه فعالیت و تجربه در ارائه خدمات فروش
-            لوازم جانبی کامپیوتر و موبایل ، فروش لپ تاپ استوک و تعمیرات انواع
-            کامپیوتر، لپ تاپ،موبایل، و کنسول های بازی می باشد. این فروشگاه با
-            پایبندی به اصل های ارائه هر چه سریعتر خدمات ، تضمین اصالت کالا و تست
-            هر نوع محصول خریداری شده قبل از ارسال و ارائه فیلم محصول در صورت
-            درخواست مشتری راه اندازی شده است . کارشناسان ما آماده پاسخگویی و
-            مشاوره خرید قبل از خرید میباشند. تمام روز های هفته به جز روز های
-            تعطیل از ساعت 10 صبح الی 20 پاسخگوی شما هستیم .
+          <p className="text-xs sm:text-sm xl:text-lg text-justify">
+            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
+            استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در
+            ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز،
+            و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای
+            زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و
           </p>
-        </div>
-        <div className="flex flex-col items-center xl:justify-evenly xl:w-2/3 justify-center sm:flex-row space-y-5 sm:space-y-0 sm:space-x-5 rtl:space-x-reverse">
-          <div className="flex flex-col space-y-5">
+          <div className="flex flex-row space-x-5 rtl:space-x-reverse">
             <Icon
               text="نماد اعتماد"
               icon={
-                <div className="lg:w-16 w-9 lg:h-16 h-9 items-center justify-center flex rounded-xl bg-white text-lg lg:text-3xl">
+                <div className="h-10 w-10 items-center justify-center flex rounded-xl bg-white text-lg lg:text-3xl">
                   <a
                     referrerPolicy="origin"
                     target="_blank"
@@ -68,13 +63,9 @@ export default function Footer() {
             />
             <Icon
               text="۰۹۳۹۶۵۵۴۳۷۰ - ۰۹۱۴۹۵۲۰۶۰۸"
-              icon={<Image src={require("@/public/eita.png")} alt="ایتا" />}
-            />
-            <Icon
-              text="۰۹۳۹۶۵۵۴۳۷۰ - ۰۹۱۴۹۵۲۰۶۰۸"
               url="tel:09396554370"
               icon={
-                <div className="lg:w-16 w-9 lg:h-16 h-9 items-center justify-center flex rounded-xl bg-green-400 text-lg lg:text-3xl text-white">
+                <div className="h-10 w-10 items-center justify-center flex rounded-xl bg-green-400 text-lg text-white">
                   <BsFillTelephoneFill />
                 </div>
               }
@@ -90,6 +81,8 @@ export default function Footer() {
               }
             />
           </div>
+        </div>
+        <div className="flex flex-col items-center xl:justify-evenly  justify-center sm:flex-row space-y-5 sm:space-y-0 sm:space-x-5 rtl:space-x-reverse">
           <div className="h-96 rounded-xl w-96 overflow-hidden">
             <div
               style={{
