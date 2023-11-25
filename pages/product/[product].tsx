@@ -73,7 +73,7 @@ export default function ProductPage(props: any) {
       {product !== undefined ? (
         <div className="flex flex-col items-center w-full bg-gray-100 max-lg:px-0 px-36">
           <Header state={0} />
-          <div className="space-y-5 p-5 sm:container pt-40">
+          <div className="space-y-5 p-5 sm:container pt-20">
             {product.category === 61 || product.category === 56 ? (
               <div className="bg-amber-400 p-5 flex items-center justify-center rounded-xl text-2xl font-bold">
                 <p>
@@ -88,7 +88,7 @@ export default function ProductPage(props: any) {
               className="flex flex-col xl:flex-row space-y-5 xl:space-y-0 xl:space-x-5 
             rtl:space-x-reverse rounded-xl bg-bg-200 shadow-xl"
             >
-              <div className="xl:w-1/2">
+              <div className="xl:w-1/2 p-5">
                 <ImageCarousel images={[product.image]} />
               </div>
               <div
@@ -96,6 +96,9 @@ export default function ProductPage(props: any) {
                 relative  items-center justify-between flex-col space-y-7"
               >
                 <div className="flex flex-col space-y-5 w-full">
+                  <label className="text-xl font-bold">
+                    {product.persianName}
+                  </label>
                   <label className="text-gray-500 font-bold">
                     {product.garanty}
                   </label>
@@ -311,7 +314,7 @@ export default function ProductPage(props: any) {
             {products !== undefined && products?.length > 0 ? (
               <ProductLists
                 products={products}
-                title={{ name: "کتاب های مشابه" }}
+                title={{ name: "محصولات مشابه" }}
               />
             ) : (
               <></>
@@ -324,41 +327,6 @@ export default function ProductPage(props: any) {
             ) : (
               <></>
             )}
-            {/* <div className="flex flex-row space-x-5 rtl:space-x-reverse">
-                        <div className="w-2/3 h-96 flex flex-col items-center justify-center space-y-5">
-                            <BiMessageSquareX className="text-7xl text-gray-500" />
-                            <p className="text-xl text-gray-700">
-                                در حال حاضر نظری برای این محصول ثبت نشده است
-                            </p>
-                        </div>
-                        <div className="bg-bg-200 shadow-xl rounded-xl w-1/3  relative overflow-hidden space-y-5 p-5 flex flex-col items-center">
-                            {user === undefined ? (
-                                <div className="absolute flex-col space-y-5 backdrop-blur w-full h-full rounded-xl flex items-center justify-center">
-                                    <p className="text-gray-700 text-xl">
-                                        برای ارسال نظر ابتدا بایستی وارد شوید
-                                    </p>
-                                    <button className="px-5 py-3 bg-yellow-500 rounded-xl">
-                                        <p className="">ورود به حساب کاربری</p>
-                                    </button>
-                                </div>
-                            ) : (
-                                <></>
-                            )}
-                            <p className="font-bold text-xl">ارسال نظر</p>
-
-                            <div className="flex flex-col w-full space-y-2">
-                                <label htmlFor="name">نظر شما :</label>
-                                <textarea
-                                    id="name"
-                                    className="bg-gray-100 rounded-xl p-2 w-full h-64
-                                    resize-none outline-none"
-                                />
-                            </div>
-                            <button className="bg-green-400 p-3 rounded-xl w-44">
-                                <p>ارسال نظر</p>
-                            </button>
-                        </div>
-                    </div> */}
           </div>
           <Footer />
         </div>

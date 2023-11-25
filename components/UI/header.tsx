@@ -11,11 +11,11 @@ export default function Header(props: { state: number }) {
   const router = useRouter();
 
   return (
-    <div className="bg-black p-5 fixed left-0 z-50 right-0 top-0 flex flex-row justify-between items-center">
+    <div className="bg-black px-5 py-2 fixed left-0 z-50 right-0 top-0 flex flex-row justify-between items-center">
       <div className="flex flex-row space-x-5 rtl:space-x-reverse h-full">
         {[
-          { name: "خانه", dir: "" },
-          { name: "لیست محصولات", dir: "" },
+          { name: "خانه", dir: "/" },
+          { name: "لیست محصولات", dir: "/lists/all/" },
           { name: "ثبت کتاب", dir: "" },
           { name: "درباره ما", dir: "" },
         ].map((item, index) => (
