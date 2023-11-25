@@ -4,6 +4,7 @@ import Banner from "@/components/UI/banner";
 import ProductLists from "@/components/store/productsList";
 import { useAppSelector } from "@/store/HOCs";
 import { NextSeo } from "next-seo";
+import Image from "next/image";
 
 export default function MainPage() {
   const products = useAppSelector((store) => store.products);
@@ -30,6 +31,13 @@ export default function MainPage() {
                 h-80 border-black border-b-[16px] bg-white"
                 key={index}
               >
+                <Image
+                  alt="بزودی"
+                  src={"/comming-soon.png"}
+                  width={300}
+                  height={700}
+                  className="h-64 object-contain"
+                />
                 <label className="absolute bottom-3">{item.name}</label>
               </div>
             ))}

@@ -6,9 +6,14 @@ import { AiFillHome } from "react-icons/ai";
 import { FaInfo, FaShoppingCart } from "react-icons/fa";
 import { MdSearch, MdPerson } from "react-icons/md";
 import { IoBookSharp } from "react-icons/io5";
+import { AutoComplete } from "antd";
+import { useAppSelector } from "@/store/HOCs";
+import { useState } from "react";
 
 export default function Header(props: { state: number }) {
   const router = useRouter();
+  const products = useAppSelector((store) => store.products);
+  const [options, setOptions] = useState<{ value: string; id: number }[]>([]);
 
   return (
     <div className="bg-black px-5 py-2 fixed left-0 z-50 right-0 top-0 flex flex-row justify-between items-center">
@@ -36,10 +41,27 @@ export default function Header(props: { state: number }) {
             <MdSearch />
           </div>
           <div className="">
-            <input
-              type="text"
-              className="text-xs w-0 group-focus:w-48 focus:w-48 outline-none group-focus:ms-2 focus:ms-2"
-              placeholder="جست و جو کنید"
+            <AutoComplete
+              popupClassName=""
+              className="text-xs w-64 outline-none ms-2"
+              options={options}
+              bordered={false}
+              onSelect={(obj) => {
+                router.push(
+                  `/product/${
+                    products.find((product) => product.persianName === obj)?.id
+                  }`
+                );
+                setOptions([]);
+              }}
+              onSearch={(text) =>
+                setOptions(
+                  products
+                    .filter((p) => p.persianName.includes(text))
+                    .map((p) => ({ value: p.persianName, id: p.id }))
+                )
+              }
+              placeholder="محصول خود را جست و جو کنید ..."
             />
           </div>
         </button>
