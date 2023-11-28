@@ -55,7 +55,7 @@ export default function HistoryModal(props: {
                   </div>
                   <div className="flex flex-row text-primary-700 font-bold space-x-2 rtl:space-x-reverse items-center">
                     <HiBuildingStorefront className="text-xl" />
-                    <label className="text-sm">ارسال از انبار کارنسینو</label>
+                    <label className="text-sm">ارسال از انبار خط هشت</label>
                   </div>
                   <div className="flex flex-row items-end justify-between ">
                     <label>

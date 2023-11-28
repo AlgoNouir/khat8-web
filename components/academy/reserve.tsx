@@ -26,7 +26,7 @@ export default function ReserveModal(props: { handler: any; open: boolean }) {
             className="h-auto w-full opacity-50"
           />
           <label className="text-center text-xl font-bold text-gray-600">
-            آکادمی اقتصادی کارنسینو (خانه اقتصاد) دارای فضای اشتراکی کاری و
+            آکادمی اقتصادی خط هشت (خانه اقتصاد) دارای فضای اشتراکی کاری و
             کتابخانه اقتصادی توسعه دهندگان، علاقه مندان بازار های مالی و دیگر
             اشخاص کارآفرین می باشد
           </label>

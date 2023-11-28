@@ -10,7 +10,7 @@ export default function Input(props: {
         value={props.value}
         onChange={(e) => props.handler(e.target.value)}
         type="text"
-        className="bg-gray-100 rounded-xl 2xl:w-96 w-80"
+        className="bg-gray-100 rounded-xl 2xl:w-96 w-80 p-5"
         placeholder={
           props.title === undefined ? undefined : props.title + " را وارد کنید"
         }

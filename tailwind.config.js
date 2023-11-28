@@ -7,23 +7,12 @@ module.exports = {
         "./app/**/*.{js,ts,jsx,tsx,mdx}",
     ],
     theme: {
-        backgroundImage: {
-            caffeePateren:
-                "url(https://currencyno.storage.iran.liara.space/Core/caffehPattern.jpg)",
-            academyPattern:
-                "url(https://currencyno.storage.iran.liara.space/Core/academyPattern.jpg)",
-            fixPattern:
-                "url(https://currencyno.storage.iran.liara.space/Core/fixPattern.jpg)",
-            workPattern:
-                "url(https://currencyno.storage.iran.liara.space/Core/workPattern.jpg)",
-            storePattern:
-                "url(https://currencyno.storage.iran.liara.space/Core/storePattern.png)",
-        },
         extend: {
             opacity: {
                 pattern: 0.15,
             },
             colors: {
+                black:"#23828c",
                 prime: {
                     100: "#173664",
                     200: "#4771AF",

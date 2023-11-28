@@ -22,6 +22,7 @@ export default function Header(props: { state: number }) {
           { name: "خانه", dir: "/" },
           { name: "لیست محصولات", dir: "/lists/all/" },
           { name: "ثبت کتاب", dir: "/book" },
+          { name: "کتاب آنلاین", dir: "/lists/all/" },
           { name: "درباره ما", dir: "/info" },
         ].map((item, index) => (
           <button

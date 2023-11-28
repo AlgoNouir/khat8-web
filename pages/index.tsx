@@ -5,28 +5,47 @@ import ProductLists from "@/components/store/productsList";
 import { useAppSelector } from "@/store/HOCs";
 import { NextSeo } from "next-seo";
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 export default function MainPage() {
   const products = useAppSelector((store) => store.products);
+  const router = useRouter();
   return (
     <>
       <NextSeo description="Home page description of the page" />
       <div className="flex flex-col items-center bg-gray-100">
         <Header state={0} />
-        <div className="bg-black w-full h-[500px]"></div>
+        <div className="bg-black w-full h-[500px] items-center rtl:space-x-reverse justify-center flex flex-col">
+          <Image
+            src="/edited_logo.png"
+            alt="خط هشت"
+            width={0}
+            height={0}
+            sizes="100vw"
+            className="w-80 h-auto"
+          />
+          <div className="flex flex-row space-x-3 rtl:space-x-reverse items-center">
+            <label className="text-white text-xl">انتشارات</label>
+            <label className="text-white font-black text-3xl border-b">
+              خط ۸
+            </label>
+            <label className="text-white text-xl">مجموعه فرهنگی</label>
+          </div>
+        </div>
         <div className="sm:container p-5 space-y-2 sm:space-y-5 px-36">
           <div className="grid grid-cols-4 gap-5">
             {[
-              { name: "کتاب ها", dir: "" },
-              { name: "لوازم تحریر", dir: "" },
-              { name: "test", dir: "" },
-              { name: "test", dir: "" },
-              { name: "test", dir: "" },
-              { name: "test", dir: "" },
-              { name: "test", dir: "" },
-              { name: "test", dir: "" },
+              { name: "کتاب ها", dir: "/lists/all" },
+              { name: "لوازم تحریر", dir: "/lists/all" },
+              { name: "test", dir: "/lists/all" },
+              { name: "test", dir: "/lists/all" },
+              { name: "test", dir: "/lists/all" },
+              { name: "test", dir: "/lists/all" },
+              { name: "test", dir: "/lists/all" },
+              { name: "test", dir: "/lists/all" },
             ].map((item, index) => (
-              <div
+              <button
+                onClick={() => router.push(item.dir)}
                 className="relative w-full flex items-center justify-center
                 h-80 border-black border-b-[16px] bg-white"
                 key={index}
@@ -39,7 +58,7 @@ export default function MainPage() {
                   className="h-64 object-contain"
                 />
                 <label className="absolute bottom-3">{item.name}</label>
-              </div>
+              </button>
             ))}
           </div>
           <Banner

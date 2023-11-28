@@ -14,13 +14,13 @@ export default function App({ Component, pageProps, router }: AppProps) {
   return (
     <>
       <DefaultSeo
-        title="کارنسینو"
-        description="مجموعه خدماتی و فروشگاه آنلاین کارنسینو، تمامی خدمات رزرو کافه در اردبیل، خرید محصولات دیجیتال، اجاره فضا اشتراکی و دیگر خدمات متنوع را در اختیار شما قرار می دهد"
+        title="خط هشت"
+        description="مجموعه خدماتی و فروشگاه آنلاین خط هشت، تمامی خدمات رزرو کافه در اردبیل، خرید محصولات دیجیتال، اجاره فضا اشتراکی و دیگر خدمات متنوع را در اختیار شما قرار می دهد"
         openGraph={{
           type: "website",
           locale: "fa_IR",
           url: "https://currencyno.com",
-          siteName: "کارنسینو",
+          siteName: "خط هشت",
         }}
       />
       <Provider store={store}>

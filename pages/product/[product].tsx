@@ -74,42 +74,21 @@ export default function ProductPage(props: any) {
         <div className="flex flex-col items-center w-full bg-gray-100 max-lg:px-0 px-36">
           <Header state={0} />
           <div className="space-y-5 p-5 sm:container pt-20">
-            {product.category === 61 || product.category === 56 ? (
-              <div className="bg-amber-400 p-5 flex items-center justify-center rounded-xl text-2xl font-bold">
-                <p>
-                  شما می توانید با خرید لپتاپ از مجموعه کارنسینو از ارسال رایگان
-                  بهره مند شوید !!!
-                </p>
-              </div>
-            ) : (
-              <></>
-            )}
             <div
               className="flex flex-col xl:flex-row space-y-5 xl:space-y-0 xl:space-x-5 
             rtl:space-x-reverse rounded-xl bg-bg-200 shadow-xl"
             >
-              <div className="xl:w-1/2 p-5">
-                <ImageCarousel images={[product.image]} />
-              </div>
               <div
                 className="xl:w-1/2 p-10 flex
-                relative  items-center justify-between flex-col space-y-7"
+                relative  items-center justify-center flex-col space-y-20"
               >
-                <div className="flex flex-col space-y-5 w-full">
+                <div className="flex flex-col space-y-5 w-full text-center">
                   <label className="text-xl font-bold">
                     {product.persianName}
                   </label>
                   <label className="text-gray-500 font-bold">
                     {product.garanty}
                   </label>
-                  <div className="flex flex-row text-prime-200/50 space-x-2 rtl:space-x-reverse items-center">
-                    <HiBuildingStorefront className="text-xl" />
-                    <label>ارسال از انبار کارنسینو</label>
-                  </div>
-                  <div className="flex flex-row text-prime-200/50 space-x-2 rtl:space-x-reverse items-center">
-                    <BsFillBoxSeamFill className="text-xl" />
-                    <label>موجود در انبار کارنسینو</label>
-                  </div>
                 </div>
                 <div
                   className="w-full flex flex-col space-y-5 sm:space-y-0 sm:flex-row space-x-5 
@@ -273,7 +252,7 @@ export default function ProductPage(props: any) {
                               inCart.count !== count)
                               ? "bg-green-700"
                               : "bg-accent-200"
-                          } p-3 w-40 rounded-xl`}
+                          } p-3 w-44 rounded-xl`}
                         >
                           <p className=" font-bold text-white">
                             {inCart === undefined ||
@@ -289,28 +268,17 @@ export default function ProductPage(props: any) {
                   )}
                 </div>
               </div>
+              <div className="xl:w-1/2 p-5">
+                <ImageCarousel images={[product.image]} />
+              </div>
             </div>
             <div
-              className="w-full rounded-xl bg-bg-200 shadow-xl p-10
+              className="w-full rounded-xl bg-[#EBFEFF] shadow-xl p-10
                         flex flex-col space-y-5"
             >
               <label className="text-xl font-bold">توضیحات :</label>
               <p className="text-lg text-justify">{product.desc}</p>
             </div>
-            {product.data === undefined ? (
-              <></>
-            ) : (
-              <div className="flex flex-col shadow-xl bg-white rounded-xl p-5">
-                <label className="text-xl font-bold mb-5">مشخصات محصول :</label>
-                {Object.entries(product.data).map(([key, value], index) => (
-                  <ProductDetail
-                    key={`productDetail-${index}`}
-                    name={key}
-                    amount={value}
-                  />
-                ))}
-              </div>
-            )}
             {products !== undefined && products?.length > 0 ? (
               <ProductLists
                 products={products}

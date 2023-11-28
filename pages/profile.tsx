@@ -86,8 +86,8 @@ export default function ProfilePage() {
               disabled={s.id === screen.id}
               onClick={() => screenHandler(s)}
               style={{
-                backgroundColor: s.id === screen.id ? "#000" : "",
-                color: s.id === screen.id ? "#FFFFFF" : "#000000",
+                backgroundColor: s.id === screen.id ? "#23828c" : "",
+                color: s.id === screen.id ? "#FFFFFF" : "#23828c",
               }}
               className="w-5/6 p-5 rounded-r-full font-bold flex flex-row 
               items-center justify-center space-x-3 rtl:space-x-reverse max-lg:rounded-l-full"
@@ -330,7 +330,7 @@ export function ProductScreen() {
               : () => router.push("factor")
           }
           className="bottom-14 text-white z-20 w-full hidden md:flex
-          bg-prime-200 px-16 py-3 rounded-xl left-14 items-center justify-center"
+          bg-black px-16 py-3 rounded-xl left-14 items-center justify-center"
         >
           <p className="text-xl font-bold">سفارش نهایی</p>
         </button>
@@ -343,7 +343,7 @@ export function ProductScreen() {
           <MdSupportAgent className="text-2xl" />
           <p>مشاوره و پشتیبانی هفت روز هفته بجز ایام تعطیل ۱۰ صبح تا ۷ شب</p>
           <FaBuilding className="text-2xl" />
-          <p>مجموعه فروشگاهی خدماتی کارنسینو </p>
+          <p>ارسال از انبار فروشگاه انتشارات خط هشت </p>
           <FaTruckFast className="text-2xl" />
           <p>ارسال سریع در کمترین زمان</p>
         </div>
