@@ -12,10 +12,9 @@ export default function MainPage() {
   const router = useRouter();
   return (
     <>
-      <NextSeo description="Home page description of the page" />
       <div className="flex flex-col items-center bg-gray-100">
         <Header state={0} />
-        <div className="bg-black w-full h-[500px] items-center rtl:space-x-reverse justify-center flex flex-col">
+        <div className="bg-black w-full h-[500px] items-center justify-center flex flex-col">
           <Image
             src="/edited_logo.png"
             alt="خط هشت"
@@ -24,13 +23,9 @@ export default function MainPage() {
             sizes="100vw"
             className="w-80 h-auto"
           />
-          <div className="flex flex-row space-x-3 rtl:space-x-reverse items-center">
-            <label className="text-white text-xl">انتشارات</label>
-            <label className="text-white font-black text-3xl border-b">
-              خط ۸
-            </label>
-            <label className="text-white text-xl">مجموعه فرهنگی</label>
-          </div>
+          <label className="text-white text-3xl font-bold">
+            خط هشت خط اعتماد و همراهی
+          </label>
         </div>
         <div className="sm:container p-5 space-y-2 sm:space-y-5 px-36">
           <div className="grid grid-cols-4 gap-5">

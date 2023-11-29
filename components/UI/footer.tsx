@@ -34,11 +34,15 @@ export default function Footer() {
       <div className="flex flex-col lg:flex-row w-screen items-center justify-evenly lg:px-10 max-lg:space-y-5 lg:space-x-5 rtl:space-x-reverse">
         <div className="lg:w-1/3 w-full space-y-5 flex flex-col">
           <p className="text-xs sm:text-sm xl:text-lg text-justify">
-            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
-            استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در
-            ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز،
-            و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای
-            زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و
+            انتشارات خط هشت افتخار دارد با مجوز رسمی از وزرارت فرهنگ و ارشاد
+            اسلامی با شماره مجوز ( 11897) و بیش از ده سال سابقه فعالیت در حوزه
+            نشر: در زمینه چاپ کتاب به دو صورت دیجیتال ( تیراژ کم ) و افست در
+            کوتاهترین و سریعترین زمان ممکن با شرایط استثنایی و با رعایت کلیه
+            مراحل آماده سازی کتاب شامل صفحه آرایی و طراحی جلد و …. اقدام نموده و
+            کتاب شما را با ( موضوعات مختلف تبدیل پایان نامه به کتاب ، آموزشی،
+            علمی ، شعر، داستان ، رمان ، ترجمه و ……. ) با اخذ شابک ISBN از اداره
+            شابک و فیپا از کتابخانه ملی در وزارت فرهنگ و ارشاد اسلامی مجوز چاپ
+            گرفته و اعلام وصول نماید .
           </p>
           <div className="flex flex-row space-x-5 rtl:space-x-reverse">
             <Icon
@@ -62,7 +66,7 @@ export default function Footer() {
               }
             />
             <Icon
-              text="۰۹۳۹۶۵۵۴۳۷۰ - ۰۹۱۴۹۵۲۰۶۰۸"
+              text="۰۹۱۴۳۵۸۵۲۱۸ - ۰۴۵۳۳۲۴۹۰۴۷"
               url="tel:09396554370"
               icon={
                 <div className="h-10 w-10 items-center justify-center flex rounded-xl bg-green-400 text-lg text-white">
@@ -109,13 +113,6 @@ export default function Footer() {
                   src="https://www.google.com/maps/embed/v1/search?q=38.24185415827948,48.29008340835571&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"
                 ></iframe>
               </div>
-              <a
-                className="google-map-code-enabler"
-                href="https://www.bootstrapskins.com/themes"
-                id="enable-map-data"
-              >
-                premium bootstrap themes
-              </a>
             </div>
           </div>
         </div>
