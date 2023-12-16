@@ -12,7 +12,7 @@ module.exports = {
                 pattern: 0.15,
             },
             colors: {
-                black:"#23828c",
+                black: "#e887cc",
                 prime: {
                     100: "#173664",
                     200: "#4771AF",

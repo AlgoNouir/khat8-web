@@ -112,7 +112,7 @@ export default function ProductPage(props: any) {
                           ).format(
                             Math.round(
                               (-100 * (product.offerPrice - product.price)) /
-                                product.price
+                              product.price
                             )
                           )}%`}</p>
                           <small className="">تخفیف !</small>
@@ -245,20 +245,19 @@ export default function ProductPage(props: any) {
                               );
                             }
                           }}
-                          className={`${
-                            inCart === undefined ||
+                          className={`${inCart === undefined ||
                             (count === 0 &&
                               inCart !== undefined &&
                               inCart.count !== count)
-                              ? "bg-green-700"
-                              : "bg-accent-200"
-                          } p-3 w-44 rounded-xl`}
+                            ? "bg-green-700"
+                            : "bg-accent-200"
+                            } p-3 w-44 rounded-xl`}
                         >
                           <p className=" font-bold text-white">
                             {inCart === undefined ||
-                            (count === 0 &&
-                              inCart !== undefined &&
-                              inCart.count !== count)
+                              (count === 0 &&
+                                inCart !== undefined &&
+                                inCart.count !== count)
                               ? "افزودن به سبد خرید"
                               : "ثبت تغیرات سفارش"}
                           </p>
@@ -273,7 +272,7 @@ export default function ProductPage(props: any) {
               </div>
             </div>
             <div
-              className="w-full rounded-xl bg-[#EBFEFF] shadow-xl p-10
+              className="w-full rounded-xl bg-gray-600 text-white shadow-xl p-10
                         flex flex-col space-y-5"
             >
               <label className="text-xl font-bold">توضیحات :</label>
